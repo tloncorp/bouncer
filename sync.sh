@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-SHIP=$1
+SHIP="${1:-zod}"
 URBIT_PATH=~/dev/urbit/urbit
 HOMESTEAD_PATH=~/dev/urbit/homestead
 SHIP_PATH=~/dev/urbit/ships

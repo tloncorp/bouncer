@@ -9,17 +9,26 @@ class Herbit
     @port = port
   end
 
-  def run(cmd)
-    puts "[herbit] #{cmd}"
-    connection.post do |req|
-      req.body = {
-        source: { dojo: cmd },
-        sink: { stdout: nil }
-      }.to_json
-    end
+  def run_app(cmd)
+    puts "[herbit:app] #{cmd}"
+    run("+hood/#{cmd}", { app: 'hood' })
+  end
+  
+  def run_dojo(cmd)
+    puts "[herbit:dojo] #{cmd}"
+    run(cmd, { stdout: nil })
   end
 
   private
+
+  def run(cmd, sink)
+    connection.post do |req|
+      req.body = {
+        source: { dojo: cmd },
+        sink: sink
+      }.to_json
+    end
+  end
 
   def connection
     @connection ||= Faraday.new(

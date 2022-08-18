@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-ruby main.rb
+SHIP="${1:-zod}"
+ruby main.rb $SHIP

@@ -1,12 +1,16 @@
-before:
-  - "|merge %garden our %base"
-  - "|mount %garden"
-  - "|merge %homestead our %base"
-  - "|mount %homestead"
+# init:
+#   - "./create.sh"
+merge:
+  - "merge %garden our %base"
+  - "merge %homestead our %base"
+mount:
+  - "mount %garden"
+  - "mount %homestead"
 sync:
-  - "./bounce.sh zod"
-after:
-  - "|commit %garden"
-  - "|install our %garden"
-  - "|commit %homestead"
-  - "|install our %homestead"
+  - "./sync.sh"
+commit:
+  - "commit %garden"
+  - "commit %homestead"
+install:
+  - "install our %garden"
+  - "install our %homestead"
