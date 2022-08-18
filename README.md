@@ -21,7 +21,7 @@ development).
 Start a new fakezod, then:
 
 ```sh
-bin/bounce  # defaults to zod; TODO: support other patps
+bin/bounce [patp] # defaults to zod; e.g., bin/bounce net
 ```
 
 ## TODO

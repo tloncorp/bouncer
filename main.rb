@@ -27,7 +27,7 @@ def main(script = DEFAULT_SCRIPT)
   # sync app desk
   for cmd in script['sync'] do
     puts "[system] #{cmd}"
-    system(cmd)
+    system("#{cmd} #{SHIP}")
   end
 
   # commit & install phase
