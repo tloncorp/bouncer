@@ -1,0 +1,12 @@
+before:
+  - "|merge %garden our %base"
+  - "|mount %garden"
+  - "|merge %homestead our %base"
+  - "|mount %homestead"
+sync:
+  - "./bounce.sh zod"
+after:
+  - "|commit %garden"
+  - "|install our %garden"
+  - "|commit %homestead"
+  - "|install our %homestead"
