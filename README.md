@@ -21,7 +21,7 @@ development).
 Start a new fakezod, then:
 
 ```sh
-bin/bounce [patp] # defaults to zod; e.g., bin/bounce net
+bin/bounce [patp] [port] # defaults to zod 12321; e.g., bin/bounce net 12322
 ```
 
 ## TODO

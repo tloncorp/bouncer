@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
 SHIP="${1:-zod}"
-ruby main.rb $SHIP
+PORT="${2:-12321}"
+ruby main.rb $SHIP $PORT

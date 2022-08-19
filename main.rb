@@ -3,10 +3,11 @@ require 'yaml'
 
 DEFAULT_SCRIPT = 'script.yml'.freeze
 SHIP = ARGV[0] || 'zod'
+PORT = ARGV[1] || DEFAULT_PORT
 
 def main(script = DEFAULT_SCRIPT)
   script = YAML.load_file(script)
-  h = Herbit.new
+  h = Herbit.new(port: PORT)
 
   # remove old pier, create new one
   # TODO: create a new ship in separate process? need to wait for it to finish
@@ -26,7 +27,7 @@ def main(script = DEFAULT_SCRIPT)
 
   # sync app desk
   for cmd in script['sync'] do
-    puts "[system] #{cmd}"
+    puts "[system] #{cmd} #{SHIP}"
     system("#{cmd} #{SHIP}")
   end
 
