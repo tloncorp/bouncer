@@ -2,15 +2,15 @@
 #   - "./create.sh"
 merge:
   - "merge %garden our %base"
-  - "merge %homestead our %base"
+  - "merge %groups our %base"
 mount:
   - "mount %garden"
-  - "mount %homestead"
+  - "mount %groups"
 sync:
   - "./sync.sh"
 commit:
   - "commit %garden"
-  - "commit %homestead"
+  - "commit %groups"
 install:
   - "install our %garden"
-  - "install our %homestead"
+  - "install our %groups"

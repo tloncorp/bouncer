@@ -28,5 +28,5 @@ bin/bounce [patp] [port] # defaults to zod 12321; e.g., bin/bounce net 12322
 
 - [ ] automated removal of stale pier / creation of new pier (for now, run `./create.sh` manually)
 - [ ] add support for different / multiple local fake ships (besides `~zod`)
-- [ ] customizable dirs for ship, homestead repo, and urbit paths
-- [ ] support other app desks (currently assumes Homestead)
+- [ ] customizable dirs for ship, groups repo, and urbit paths
+- [ ] support other app desks (currently assumes groups)
