@@ -3,14 +3,18 @@
 merge:
   - "merge %garden our %base"
   - "merge %groups our %base"
+  - "merge %talk our %base"
 mount:
   - "mount %garden"
   - "mount %groups"
+  - "mount %talk"
 sync:
   - "./sync.sh"
 commit:
   - "commit %garden"
   - "commit %groups"
+  - "commit %talk"
 install:
   - "install our %garden"
   - "install our %groups"
+  - "install our %talk"

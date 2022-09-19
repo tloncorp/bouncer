@@ -11,3 +11,6 @@ rsync -avqL --delete $URBIT_PATH/pkg/base-dev/* $SHIP_PATH/$SHIP/groups/ && \
 rsync -avqL $URBIT_PATH/pkg/garden-dev/* $SHIP_PATH/$SHIP/groups/ && \
 rsync -avqL $REPO_PATH/desk/* $SHIP_PATH/$SHIP/groups/ && \
 rsync -avqL $REPO_PATH/landscape-dev/* $SHIP_PATH/$SHIP/groups/
+rsync -avqL $URBIT_PATH/pkg/garden-dev/* $SHIP_PATH/$SHIP/talk/ && \
+rsync -avqL $REPO_PATH/talk/* $SHIP_PATH/$SHIP/talk/ && \
+rsync -avqL $REPO_PATH/landscape-dev/* $SHIP_PATH/$SHIP/talk/
