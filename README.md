@@ -1,8 +1,6 @@
 # bouncer
 
-An Urbit app desk bouncing script. This will connect to a fakezod, and run a 
-script to merge, mount, rsync, commit, and install (a common workflow for app
-development).
+A dev tool to streamline Urbit app development. `bouncer` connects to a [fake ship](https://developers.urbit.org/guides/core/environment#creating-a-fake-ship) and runs a customizable script to merge, mount, rsync, commit, and install (a common workflow for app development).
 
 ## Requirements
 
@@ -18,16 +16,22 @@ development).
 
 ## Usage
 
-Start a new fakezod, then:
+For a quick demo, start a new fake `~zod` and then:
+```
+bin/bounce
+```
 
-```sh
+To use a custom config:
+```
 bin/bounce -c ./apps/landscape/config.yml
 ```
 
-Or for a ship besides `~zod` running on another loopback port:
+Or for a ship besides `~zod` running on another loopback port (ie, running multiple ships):
 ```
 bin/bounce -c ./apps/landscape/config.yml -s net -p 12322
 ```
+
+The custom config syntax is documented in `config.yml`.
 
 To find the loopback port, check the fake ship output for the following line:
 ```
