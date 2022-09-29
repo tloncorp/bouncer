@@ -1,0 +1,40 @@
+
+# script - a list of command phases, and commands to run within each phase
+#
+# the `cmd` is the command to run on the ship or host system
+# the `type` indicates where and how to run
+#   - `system` will run the command on the host system
+#   - `urbit:app` will run the command on the fake ship via hood
+#   - `urbit:dojo` will run the command on the fake ship in the dojo 
+#
+# syntax:
+#
+# script:
+#   - [phase0]:
+#     - cmd: 'hi ~zod'
+#       type: 'urbit:app'
+#     - cmd: 'hi ~nut'
+#       type: 'urbit:app'
+#   - [phase1]:
+#     - cmd: './sync.sh'
+#       type: 'syste'
+#
+#
+# env - a dictionary of k:v pairs to set as system ENV values when running system commands
+#
+# syntax:
+#
+# env:
+#  urbit_path: '~/urbit/urbit'
+
+script:
+  - demo:
+    - cmd: 'hi ~zod'
+      type: 'urbit:app'
+    - cmd: './test.sh'
+      type: 'system'
+env:
+  basename: 'app'
+  urbit_path: '~/urbit/urbit'
+  repo_path: '~/path/to/project'
+  ship_path: '~/urbit/ships'

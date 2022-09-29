@@ -2,10 +2,8 @@ require 'faraday'
 require 'faraday/net_http'
 Faraday.default_adapter = :net_http
 
-DEFAULT_PORT = 12321.freeze
-
 class Herbit
-  def initialize(port: DEFAULT_PORT)
+  def initialize(port:)
     @port = port
   end
 
