@@ -1,6 +1,6 @@
 # bouncer
 
-A dev tool to streamline Urbit app development. `bouncer` connects to a [fake ship](https://developers.urbit.org/guides/core/environment#creating-a-fake-ship) and runs a customizable script to merge, mount, rsync, commit, and install (a common workflow for app development).
+A dev tool to streamline Urbit app development. `bouncer` connects to a running ship (e.g, a [fake ship](https://developers.urbit.org/guides/core/environment#creating-a-fake-ship) or locally running moon) and runs a customizable script to merge, mount, rsync, commit, and install (a common workflow for app development).
 
 ## Requirements
 
@@ -37,6 +37,10 @@ To find the loopback port, check the fake ship output for the following line:
 ```
 http: loopback live on http://localhost:12322
 ```
+
+## Example
+
+Check out the [`landscape-apps`](https://github.com/tloncorp/landscape-apps/tree/master/ops) repo for an example of how `bouncer` is used in production at Tlon.
 
 ## TODO
 
