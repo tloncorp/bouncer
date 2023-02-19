@@ -1,4 +1,5 @@
 require 'faraday'
+require 'uri'
 require 'faraday/net_http'
 Faraday.default_adapter = :net_http
 
@@ -20,7 +21,16 @@ class Herbit
   private
 
   def run(cmd, sink)
-    connection.post do |req|
+    encoded_params = URI.encode_www_form({ password: "lidlut-tabwed-pillex-ridrup" })
+    response = connection.post(
+        "http://localhost:8080/~/login",
+        encoded_params
+      )
+    cookie = response.headers['set-cookie']
+    cookie = cookie.split(';')[0]
+
+    response = connection.post do |req|
+      req.headers['Cookie'] = cookie
       req.body = {
         source: { dojo: cmd },
         sink: sink
