@@ -23,7 +23,7 @@ class Herbit
   def run(cmd, sink)
     encoded_params = URI.encode_www_form({ password: "lidlut-tabwed-pillex-ridrup" })
     response = connection.post(
-        "http://localhost:#{@port}/~/login",
+        "http://localhost:8080/~/login",
         encoded_params
       )
     cookie = response.headers['set-cookie']
